@@ -24,7 +24,10 @@
 			and deploy a UWP (Universal Windows Platform) app to a Raspberry Pi 2.
 			<br>
 			<br>
-			Source: http://ms-iot.github.io/content/en-US/win10/samples/HelloWorld.htm 
+			This is a simplified version of these two sites:<br>
+			http://ms-iot.github.io/content/en-US/win10/samples/HelloWorld.htm<br>
+			http://ms-iot.github.io/content/en-US/win10/samples/PowerShell.htm<br>
+			I do not claim to have created this content; I only rephrased it.
 		</p>
 		
 		<div id="main">
@@ -272,6 +275,10 @@
 			
 			</dl>
 			
+			<b>Works Cited:</b><br>
+			<br>
+			"Windows IoT - HelloWorld." Windows IoT - HelloWorld. N.p., n.d. Web. 10 Oct. 2015.<br>
+			"Windows IoT - Use PowerShell to Connect to a Windows 10 IoT Core Device." <i>Windows IoT - Use PowerShell to Connect to a Windows 10 IoT Core Device.</i> N.p., n.d. Web. 10 Oct. 2015.
 		</div>
 		
 	</body>
