@@ -1,0 +1,28 @@
+ol#main-list {
+	list-style-type: upper-alpha;
+}
+
+ol.requirements {
+	list-style-type: disc;	
+}
+
+.section-header {
+	font-size: 1.5em;
+}
+
+.section-separation {
+	font-weight: bold;
+}
+
+.instructions-ol {
+	list-style-type: decimal;
+}
+
+.instructions dt {
+	font-size: 1.2em;
+}
+
+span.code {
+	font-family: "Lucida Console", Monaco, monospace;
+}
+	
