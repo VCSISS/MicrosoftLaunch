@@ -8,7 +8,8 @@ $(document).ready(function() {
 		},
 		
 		error: function(xhr, status, error) {
-			alert("Error loading the menu:\nxhr: " + xhr + "\nstatus: " + status + "\nerror: " + error);
+			$("#menu-container").html("Error loading the menu:<br>xhr: " + xhr + "<br>status: " + status + "<br>error: " + error);
+			$("body").css("margin-top", 50);
 		}
 	});
 	
