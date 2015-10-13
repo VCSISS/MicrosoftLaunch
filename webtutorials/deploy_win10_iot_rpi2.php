@@ -143,7 +143,7 @@
 								</dd>
 
 								<dt>
-									Create the content of the App (sample Hello, World app instructions given)
+									Create the content of the App (sample Hello World app instructions given)
 								</dt>
 						
 								<dd>
