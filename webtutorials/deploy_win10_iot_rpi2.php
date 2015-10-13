@@ -143,7 +143,7 @@
 								</dd>
 
 								<dt>
-									Make the app display "Hello, World!"
+									Create the content of the App (sample Hello, World app instructions given)
 								</dt>
 						
 								<dd>
