@@ -1,0 +1,1 @@
+C:\Users\Mihir Kasmalkar\Documents\Visual Studio 2015\Projects\ISS\ClientRPI2IoT\ClientRPI2IoT\ClientRPI2IoT.pyproj;arm
