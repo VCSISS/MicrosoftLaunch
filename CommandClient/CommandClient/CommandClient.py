@@ -1,4 +1,4 @@
-import http.client
+﻿import http.client
 
 def status_update(message): print("STATUS:", message)
 
@@ -18,7 +18,10 @@ try:
 
         print("Executing=============================")
         
-        exec(response)
+        try:
+            exec(response)
+        except Exception as ex:
+            print(str(ex))
 
         print("======================================")
 
