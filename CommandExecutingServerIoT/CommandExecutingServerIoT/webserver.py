@@ -1,4 +1,4 @@
-import http.server
+﻿import http.server
 import cgi
 
 class CommandExecutingRequestHandler(http.server.BaseHTTPRequestHandler):
@@ -7,9 +7,6 @@ class CommandExecutingRequestHandler(http.server.BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/plain")
         self.end_headers()
     
-    def status_update(self, message):
-        print("STATUS:", message)
-
     def do_POST(self):
         command = self.path
 
@@ -32,3 +29,6 @@ class CommandExecutingRequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"Failure")
 
         print("========================================")
+
+    def status_update(self, message):
+        print("STATUS:", message)
