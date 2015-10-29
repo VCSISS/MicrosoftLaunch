@@ -19,6 +19,15 @@ class CommandServer(http.server.BaseHTTPRequestHandler):
             line = input(">>> ")
             if line == ".":
                 break
+            elif line == "\\":
+                code = ""
+                print("Reset")
+                continue
+            elif line == "dofile":
+                file = input("Filename> ")
+                f = open(file)
+                code = "\n".join(f.readlines())
+                break
             code += line
 
         self.wfile.write(bytearray(code, "UTF-8"))

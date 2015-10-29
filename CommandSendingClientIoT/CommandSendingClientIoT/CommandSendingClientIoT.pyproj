@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
   <PropertyGroup>
-    <Name>CommandClientIoT</Name>
+    <Name>CommandSendingClientIoT</Name>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == 'Any CPU' ">x86</Platform>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -14,19 +14,19 @@
     <AppxPackage>true</AppxPackage>
     <AppxPackageSigningEnabled>true</AppxPackageSigningEnabled>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
-    <ProjectGuid>f4866476-2e70-4a2e-aeaf-e94d20b54ed0</ProjectGuid>
+    <ProjectGuid>5c3251c0-cf58-4326-883d-8147eb2059cc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <WorkingDirectory>.</WorkingDirectory>
     <StartupFile>StartupTask.py</StartupFile>
     <ContainsStartupTask>true</ContainsStartupTask>
     <SearchPath />
-    <PackageCertificateKeyFile>CommandClientIoT_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>CommandSendingClientIoT_TemporaryKey.pfx</PackageCertificateKeyFile>
     <DefaultLanguage>en-US</DefaultLanguage>
     <ProjectTypeGuids>{2b557614-1a2b-4903-b9df-ed20d7b63f3a};{888888A0-9F3D-457C-B088-3A5042F75D52}</ProjectTypeGuids>
     <InterpreterId>{86767848-40b4-4007-8bcc-a3835edf0e69}</InterpreterId>
     <InterpreterVersion>3.5</InterpreterVersion>
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
-    <RootNamespace>CommandClientIoT</RootNamespace>
+    <RootNamespace>CommandSendingClientIoT</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.WindowsSDK.props" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -46,7 +46,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="CommandClientIoT_TemporaryKey.pfx" />
+    <None Include="CommandSendingClientIoT_TemporaryKey.pfx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>

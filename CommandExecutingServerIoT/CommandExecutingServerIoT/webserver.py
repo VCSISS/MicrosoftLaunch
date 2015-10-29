@@ -1,5 +1,24 @@
 ﻿import http.server
+import http.client
+import urllib.parse
 import cgi
+import re
+import traceback
+
+c = http.client.HTTPConnection("127.0.0.1", 8001)
+
+def getInput(prompt=""):
+    global c
+
+    c.request("GET", "",
+                urllib.parse.urlencode({"prompt": prompt}),
+                {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"})
+
+    response = c.getresponse().read()
+
+    return response.decode("UTF-8")
+
+input = getInput
 
 class CommandExecutingRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_HEAD(self):
@@ -21,11 +40,13 @@ class CommandExecutingRequestHandler(http.server.BaseHTTPRequestHandler):
         try:
             vars = cgi.parse_qs(self.rfile.read(int(self.headers["Content-length"])))
             code = (vars[b"code"])[0]
-            exec(code.decode("UTF-8"))
+            codeString = code.decode("UTF-8")
+            
+            exec(codeString)
+
             self.wfile.write(b"Success")
         except Exception as ex:
-            print("Error:")
-            print(str(ex))
+            traceback.print_exc()
             self.wfile.write(b"Failure")
 
         print("========================================")

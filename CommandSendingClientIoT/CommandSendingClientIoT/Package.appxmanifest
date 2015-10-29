@@ -8,14 +8,14 @@
   IgnorableNamespaces="uwp mp iot">
 
   <Identity
-	  Name="CommandClientIoT"
+	  Name="CommandSendingClientIoT"
 	  Publisher="CN=Mihir Kasmalkar"
 	  Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="3bbc382e-f5d8-4764-806f-b036d2406d6a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="13b6bda7-a1c4-4587-9655-2f9ede9a5cc2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>CommandClientIoT</DisplayName>
+    <DisplayName>CommandSendingClientIoT</DisplayName>
     <PublisherDisplayName>Mihir Kasmalkar</PublisherDisplayName>
     <Logo>StoreLogo.png</Logo>
   </Properties>
@@ -31,10 +31,10 @@
   <Applications>
     <Application Id="App">
       <uwp:VisualElements
-			  DisplayName="CommandClientIoT"
+			  DisplayName="CommandSendingClientIoT"
 			  Square150x150Logo="Logo.png"
 			  Square44x44Logo="SmallLogo.png"
-			  Description="CommandClientIoT"
+			  Description="CommandSendingClientIoT"
 			  BackgroundColor="#464646"
         AppListEntry="none">
         <uwp:SplashScreen Image="SplashScreen.png" />

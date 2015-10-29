@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CommandServer.py" />
+    <Compile Include="testfile.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="webserver.py">
       <SubType>Code</SubType>
     </Compile>
