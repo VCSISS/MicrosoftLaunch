@@ -1,10 +1,14 @@
 ﻿import http.client
 import http.server
 import urllib.parse
-import cgi
 import threading
+import traceback
 
-c = http.client.HTTPConnection("127.0.0.1", 8000)
+ip = input("Enter IP address> ")
+
+c = http.client.HTTPConnection(ip, 8000)
+
+print("Got connection")
 
 serverSetup = False;
 
@@ -19,9 +23,8 @@ class InputRequestHandler(http.server.BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/plain")
         self.end_headers()
         
-        vars = cgi.parse_qs(self.rfile.read(int(self.headers["Content-length"])))
-        print(vars)
-        prompt = vars[b"prompt"][0].decode("UTF-8")
+        params = urllib.parse_qs(self.rfile.read(int(self.headers["Content-length"])))
+        prompt = params[b"prompt"][0].decode("UTF-8")
 
         self.wfile.write(bytes(input(prompt), "UTF-8"))
 
@@ -37,7 +40,9 @@ t.start()
 
 while not serverSetup: pass
 
-while True:
+running = True
+
+while running:
     code = ""
     
     try:
@@ -55,6 +60,10 @@ while True:
                 f = open(file)
                 code = "\n".join(f.readlines())
                 break
+            elif line == "exit":
+                running = False
+                break
+
             code += line + "\n"
 
         params = urllib.parse.urlencode({"code": code})
