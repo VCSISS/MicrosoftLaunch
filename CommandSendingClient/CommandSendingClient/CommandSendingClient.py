@@ -8,11 +8,11 @@ ip = input("Enter IP address> ")
 
 c = http.client.HTTPConnection(ip, 8000)
 
-print("Got connection")
+print("Created connection (may not be functional)")
 
 serverSetup = False;
 
-class InputRequestHandler(http.server.BaseHTTPRequestHandler):
+class IORequestHandler(http.server.BaseHTTPRequestHandler):
     def do_HEAD(self):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
@@ -22,20 +22,37 @@ class InputRequestHandler(http.server.BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
+
+        params = urllib.parse.parse_qs(self.rfile.read(int(self.headers["Content-length"])))
         
-        params = urllib.parse_qs(self.rfile.read(int(self.headers["Content-length"])))
-        prompt = params[b"prompt"][0].decode("UTF-8")
+        if b"prompt" in params:
+           prompt = params[b"prompt"][0].decode("UTF-8")
 
-        self.wfile.write(bytes(input(prompt), "UTF-8"))
+           self.wfile.write(bytes(input(prompt), "UTF-8"))
 
-def startInputRequestServer():
+    def do_POST(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+
+        params = urllib.parse.parse_qs(self.rfile.read(int(self.headers["Content-length"])))
+
+        if b"print" in params:
+            string = params[b"print"][0].decode("UTF-8")
+
+            print(str(string))
+
+    def log_message(self, format, *args):
+        return
+
+def startIORequestServer():
     global serverSetup
-    inputRequestServer = http.server.HTTPServer(("127.0.0.1", 8001), InputRequestHandler)
-    print("Input request server created on IP", inputRequestServer.server_address[0], "on port", inputRequestServer.server_address[1])
+    ioRequestServer = http.server.HTTPServer(("", 8001), IORequestHandler)
+    print("IO request server created on IP", ioRequestServer.server_address[0], "on port", ioRequestServer.server_address[1])
     serverSetup = True
-    inputRequestServer.serve_forever()
+    ioRequestServer.serve_forever()
 
-t = threading.Thread(target=startInputRequestServer)
+t = threading.Thread(target=startIORequestServer)
 t.start()
 
 while not serverSetup: pass
@@ -73,7 +90,7 @@ while running:
 
         response = c.getresponse().read()
 
-        print(response)
+        print(response.decode("UTF-8"))
 
     except:
         traceback.print_exc()

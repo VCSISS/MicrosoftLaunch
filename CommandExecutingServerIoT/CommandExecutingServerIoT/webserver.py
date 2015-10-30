@@ -4,8 +4,9 @@ import urllib.parse
 import cgi
 import re
 import traceback
+import _wingpio as pins
 
-c = http.client.HTTPConnection("127.0.0.1", 8001)
+c = http.client.HTTPConnection("10.79.1.51", 8001)
 
 def getInput(prompt=""):
     global c

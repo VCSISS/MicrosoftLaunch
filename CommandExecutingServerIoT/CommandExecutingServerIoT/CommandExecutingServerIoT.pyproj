@@ -27,6 +27,8 @@
     <InterpreterVersion>3.5</InterpreterVersion>
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <RootNamespace>CommandExecutingServerIoT</RootNamespace>
+    <UserSettingsChanged>
+    </UserSettingsChanged>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.WindowsSDK.props" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -48,6 +50,12 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="CommandExecutingServerIoT_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="pywindevices\pywindevices\ARM\_wingpio_d.pyd">
+      <Name>_wingpio_d.pyd</Name>
+      <PythonExtension>pywindevices\pywindevices\ARM\_wingpio_d.pyd</PythonExtension>
+    </Reference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
